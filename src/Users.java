@@ -11,11 +11,13 @@ public class Users {
         TempUser.setName(name);
         TempUser.setPassword(password);
         TempUser.setType(type);
+        if(type == IUser.USER_STUDENT) {
+            TempUser = new Student(name, password);
+        }
 
         userList.add(TempUser);
 
-
-    return null;
+    return TempUser;
 
     }
 
