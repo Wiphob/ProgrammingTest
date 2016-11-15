@@ -24,7 +24,7 @@ public class User implements IUser {
     public String setName(String name) {
         if(!name.equals("null") || !name.equals(""))
             this.u_name = name;
-        else {
+        else{
             throw new RuntimeException("Wrong input.");
         }
         //return this.u_name;
