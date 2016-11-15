@@ -7,15 +7,14 @@ public class Users {
     // Create new user with type, name and password
     // user created with this method should be automatically added to userList;
     public IUser create(int type, String name, String password) {
-        User Tempuser = new User();
-        Tempuser.setName(name);
-        Tempuser.setPassword(password);
-        Tempuser.setType(type);
+        User TempUser = new User();
+        TempUser.setName(name);
+        TempUser.setPassword(password);
+        TempUser.setType(type);
 
-        userList.add(Tempuser);
+        userList.add(TempUser);
 
-
-        return null;
+    return  null;
     }
 
     // Add new user to repository
@@ -50,10 +49,13 @@ public class Users {
 
     // Return number of user in the list, according to type
     public int countByType(int type) {
-        for(int typenum: userList){
-            if
+        int typecounter = 0;
+        for(IUser testcount : userList){
+            if(testcount.getType() == type)
+                typecounter++;
         }
 
-        return 0;
+        return typecounter;
+
     }
 }
