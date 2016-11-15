@@ -10,6 +10,7 @@ public class User implements IUser {
     @Override
     public String getName() {
         return u_name;
+
     }
 
     @Override
