@@ -3,8 +3,16 @@ public class User implements IUser {
     private String u_name = null;
     private String u_password = null;
     private int u_type = 0;
-    //private String userPattern = "^[A-Za-z][A-Za-z0-9]{7,}$";
-    //private String passPattern = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])[A-Za-z0-9]{12,}$";
+
+    User(){
+        throw new RuntimeException("Input name, password and type of User");
+    }
+
+    User(String name, String password, int type) {
+        setName(name);
+        setPassword(password);
+        setType(type);
+    }
 
 
     @Override
@@ -19,7 +27,8 @@ public class User implements IUser {
         else {
             throw new RuntimeException("Wrong input.");
         }
-        return null;
+        //return this.u_name;
+        throw new RuntimeException();
     }
 
     @Override
@@ -28,7 +37,7 @@ public class User implements IUser {
             this.u_password = password;
             return password;
         }
-        return null;
+        throw new RuntimeException();
     }
 
     @Override
@@ -42,13 +51,33 @@ public class User implements IUser {
             return true;
         }
         else{
-            throw new RuntimeException("Wrong input.");
+            //throw new RuntimeException("Wrong input.");
+            return false;
+
         }
         //return false;
     }
 
     @Override
     public int getType() {
-        return u_type;
+        if (u_type!=1 || u_type!=2){
+            throw new RuntimeException("Wrong input.");
+        }
+        else {
+            return u_type;
+        }
+
     }
+
+    public int setType(int type) {
+        if (type!=1 || type!=2){
+            throw new RuntimeException("Wrong input.");
+        }
+        else {
+            u_type = type;
+        }
+
+        return type;
+    }
+
 }
