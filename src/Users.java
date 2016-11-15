@@ -14,7 +14,9 @@ public class Users {
 
         userList.add(TempUser);
 
-    return  null;
+
+    return null;
+
     }
 
     // Add new user to repository
@@ -58,5 +60,6 @@ public class Users {
         return typecounter;
 
     }
-    
+
+
 }
